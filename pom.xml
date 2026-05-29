@@ -8,6 +8,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>24</maven.compiler.release>
-        <exec.mainClass>com.giruxprogrammer.mvcparcial.MVCParcial</exec.mainClass>
+        <exec.mainClass>Vista.MainView</exec.mainClass>
     </properties>
 </project>
