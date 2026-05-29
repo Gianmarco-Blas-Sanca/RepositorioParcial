@@ -6,13 +6,14 @@ package Modelo;
 import java.util.Date;
 
 public class Oferta {
-    private String puesto; // [cite: 62]
-    private String descripcion; // [cite: 63]
-    private String area; // [cite: 63]
-    private Date fechaInicio; // [cite: 64]
-    private Date fechaTermino; // [cite: 65]
+    //atributos
+    private String puesto; 
+    private String descripcion; 
+    private String area; 
+    private Date fechaInicio; 
+    private Date fechaTermino; 
     
-    // Clase de tipo arreglo interna
+    
     private Requisito[] requisitos;
     private int contadorRequisitos;
 
@@ -22,11 +23,11 @@ public class Oferta {
         this.area = area;
         this.fechaInicio = fechaInicio;
         this.fechaTermino = fechaTermino;
-        this.requisitos = new Requisito[100]; // Capacidad inicial
+        this.requisitos = new Requisito[100]; 
         this.contadorRequisitos = 0;
     }
 
-    public boolean agregarRequisito(int orden, String descripcion) { // [cite: 66]
+    public boolean agregarRequisito(int orden, String descripcion) { 
         if (contadorRequisitos < requisitos.length) {
             requisitos[contadorRequisitos] = new Requisito(orden, descripcion);
             contadorRequisitos++;
@@ -35,10 +36,10 @@ public class Oferta {
         return false;
     }
 
-    public boolean eliminarRequisito(int orden) { // [cite: 68]
+    public boolean eliminarRequisito(int orden) { 
         for (int i = 0; i < contadorRequisitos; i++) {
             if (requisitos[i].getOrden() == orden) {
-                // Desplazar elementos para "eliminar"
+                //desplazar elementos para eliminar
                 for (int j = i; j < contadorRequisitos - 1; j++) {
                     requisitos[j] = requisitos[j + 1];
                 }
@@ -50,8 +51,8 @@ public class Oferta {
         return false;
     }
 
-    public Requisito[] getRequisitos() { // [cite: 67]
-        // Retorna solo los elementos válidos
+    public Requisito[] getRequisitos() { 
+        //retorna solo los elementos validos
         Requisito[] actuales = new Requisito[contadorRequisitos];
         System.arraycopy(requisitos, 0, actuales, 0, contadorRequisitos);
         return actuales;
